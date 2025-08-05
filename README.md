@@ -33,8 +33,8 @@ A fully functional React authentication application with Login, Register, and Da
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd planetgreenassignment
+   git clone https://github.com/WonderWoman07/PlanetGreenAssignment.git
+   cd PlanetGreenAssignment
    ```
 
 2. **Install dependencies**
@@ -60,7 +60,6 @@ The application is pre-configured to connect to the provided PocketBase instance
 
 ### Login Page (`/login`)
 - Email and password authentication
-- Remember me functionality
 - Link to registration page
 - Error handling for invalid credentials
 
@@ -72,7 +71,7 @@ The application is pre-configured to connect to the provided PocketBase instance
 
 ### Dashboard Page (`/dashboard`)
 - Protected route (requires authentication)
-- User welcome message with email display
+- User welcome message with name displayed
 - Sidebar navigation with icons
 - Header with search and action buttons
 - Placeholder cards for future content
@@ -94,17 +93,11 @@ The application implements the exact UI designs provided in the challenge:
 - **Modern styling** using Tailwind CSS
 - **Consistent branding** with "Demo Panel" logo and styling
 
-## 🧪 Testing
-
-### Test Credentials
-The application is configured to work with the provided PocketBase instance. You can test with:
-- **Email**: (Use the credentials provided in the challenge)
-- **Password**: (Use the credentials provided in the challenge)
 
 ### Manual Testing Steps
 1. **Registration Flow**:
    - Navigate to `/register`
-   - Fill in all required fields
+   - Fill in all required fields (Password should be minimum of 8 characters)
    - Accept terms and conditions
    - Submit and verify auto-login to dashboard
 
@@ -126,14 +119,24 @@ The application is configured to work with the provided PocketBase instance. You
 ```
 src/
 ├── components/
-│   ├── Login.js          # Login page component
-│   ├── Register.js       # Registration page component
-│   ├── Dashboard.js      # Dashboard page component
-│   └── PrivateRoute.js   # Route protection component
-├── pocketbase.js         # PocketBase configuration
-├── App.js               # Main app component with routing
-├── index.js             # App entry point
-└── index.css            # Global styles with Tailwind
+│   └── TandCModal.js         # Terms & Conditions modal component
+├── contexts/
+│   └── AuthContext.js        # Authentication context provider
+├── pages/
+│   ├── Dashboard.js          # Dashboard page component
+│   ├── Login.js              # Login page component
+│   └── Register.js           # Registration page component
+├── routes/
+│   ├── App.js                # Main app routing
+│   └── ProtectedRoute.js     # Route protection component
+├── pocketbase.js             # PocketBase configuration
+├── App.css                   # App-level styles
+├── App.test.js               # App test file
+├── index.css                 # Global styles with Tailwind
+├── index.js                  # App entry point
+├── logo.svg                  # App logo
+├── reportWebVitals.js        # Web vitals reporting
+└── setupTests.js             # Test setup file
 ```
 
 ## 🚀 Deployment
@@ -192,12 +195,10 @@ The application uses Tailwind CSS. Modify `tailwind.config.js` to customize:
 
 ### Design Assumptions
 - Mobile-first responsive design
-- Accessibility considerations (ARIA labels, keyboard navigation)
 - Modern browser support (ES6+, CSS Grid, Flexbox)
 
 ### Future Enhancements
 - Add form validation libraries (Formik, React Hook Form)
-- Implement toast notifications (react-toastify)
 - Add loading spinners and animations
 - Implement error boundaries
 - Add unit tests with Jest and React Testing Library
