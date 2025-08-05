@@ -53,7 +53,7 @@ A fully functional React authentication application with Login, Register, and Da
 ## 🔧 Configuration
 
 The application is pre-configured to connect to the provided PocketBase instance:
-- **Backend URL**: `https://pb.devpgs.app/_/`
+- **Backend URL**: <Replace the URL provided in the .env file in Email>
 - **Authentication**: Uses PocketBase's built-in authentication system
 
 ## 📱 Pages
@@ -165,8 +165,13 @@ REACT_APP_POCKETBASE_URL=<URL>
 **Important Security Notes:**
 - Never commit your `.env` file to version control
 - The `.env` file is already added to `.gitignore`
-- Use `.env.example` as a template for required variables
-- Keep the env file at Netlify, Vercel, etc.
+
+**For Evaluators:**
+- To run this project, create a `.env` file in the root directory with:
+```env
+REACT_APP_POCKETBASE_URL=<URL>
+```
+- OR use the .env file provided in the email.
 
 ### Styling
 The application uses Tailwind CSS. Modify `tailwind.config.js` to customize:
