@@ -8,7 +8,7 @@ import {
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Dashboard from "../pages/Dashboard";
-import ProtectedRoute from "../components/ProtectedRoute";
+import ProtectedRoute from "./ProtectedRoute";
 import { AuthProvider } from "../contexts/AuthContext";
 import "../App.css";
 import { Toaster } from "react-hot-toast";
