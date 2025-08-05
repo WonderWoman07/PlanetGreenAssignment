@@ -1,7 +1,9 @@
 import PocketBase from 'pocketbase';
 
+
+console.log("env url : ", process.env.REACT_APP_POCKETBASE_URL);
 // Use environment variable for PocketBase URL with fallback for development
-const POCKETBASE_URL = process.env.REACT_APP_POCKETBASE_URL || 'https://pb.devpgs.app';
+const POCKETBASE_URL = process.env.REACT_APP_POCKETBASE_URL;
 
 export const pb = new PocketBase(POCKETBASE_URL);
 
