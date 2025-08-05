@@ -155,10 +155,18 @@ npm run build
 ## 🔧 Customization
 
 ### Environment Variables
-Create a `.env` file in the root directory:
+Create a `.env` file in the root directory with the following variables:
+
 ```env
-REACT_APP_POCKETBASE_URL=https://pb.devpgs.app
+# PocketBase Configuration
+REACT_APP_POCKETBASE_URL=<URL>
 ```
+
+**Important Security Notes:**
+- Never commit your `.env` file to version control
+- The `.env` file is already added to `.gitignore`
+- Use `.env.example` as a template for required variables
+- Keep the env file at Netlify, Vercel, etc.
 
 ### Styling
 The application uses Tailwind CSS. Modify `tailwind.config.js` to customize:

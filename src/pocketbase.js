@@ -1,6 +1,9 @@
 import PocketBase from 'pocketbase';
 
-export const pb = new PocketBase('https://pb.devpgs.app');
+// Use environment variable for PocketBase URL with fallback for development
+const POCKETBASE_URL = process.env.REACT_APP_POCKETBASE_URL || 'https://pb.devpgs.app';
+
+export const pb = new PocketBase(POCKETBASE_URL);
 
 // Auto-save auth state to localStorage
 pb.authStore.onChange((auth) => {
